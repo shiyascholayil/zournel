@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1056864780708",
+    "project_id": "journelapp-1af5c",
+    "storage_bucket": "journelapp-1af5c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056864780708:android:c1488f862f5e87653dc131",
+        "android_client_info": {
+          "package_name": "com.example.journelapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA_Ndqdb66JSjx02WZpLpk2tsQcB11nPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1056864780708:android:c2364ea2bdd4e9043dc131",
+        "android_client_info": {
+          "package_name": "com.example.zournel"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCA_Ndqdb66JSjx02WZpLpk2tsQcB11nPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
