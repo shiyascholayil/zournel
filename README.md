@@ -21,13 +21,13 @@ A Flutter-based journal application that allows users to securely create, edit, 
 ## Screenshots
 
 <p align="center">
-  <img src="screenshots/1.jpeg" width="45%" />
-  <img src="screenshots/2.jpeg" width="45%" />
+  <img src="assets/screenshots/1.jpeg" width="45%" />
+  <img src="assets/screenshots/2.jpeg" width="45%" />
 </p>
 
 <p align="center">
-  <img src="screenshots/3.jpeg" width="45%" />
-  <img src="screenshots/4.jpeg" width="45%" />
+  <img src="assets/screenshots/3.jpeg" width="45%" />
+  <img src="assets/screenshots/4.jpeg" width="45%" />
 </p>
 ## Installation
 
