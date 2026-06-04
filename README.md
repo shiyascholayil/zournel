@@ -86,15 +86,29 @@ flutter pub get
 ```bash
 flutter run
 ```
+## Firebase Setup
+
+Before running the project:
+
+Create a Firebase project
+Enable Firebase Authentication
+Enable Cloud Firestore
+Add google-services.json (Android) / GoogleService-Info.plist (iOS)
+
+## Project Purpose
+
+This project was developed as a beginner Flutter application to practice:
+
+ * Flutter UI development
+ * Firebase Authentication integration
+ * Cloud Firestore CRUD operations
+ * Basic mobile app architecture
 
 
 ## Future Enhancements
 
 * Add image attachments to entries 📷  
-* Add categories or tags for better organization 🏷️  
-* Enable offline support 📶  
 * Add data backup and restore option ☁️  
-* Improve UI animations and user experience ✨  
 
 ## Author
 
