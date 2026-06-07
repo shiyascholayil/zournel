@@ -65,12 +65,25 @@ class _HomeScreenState extends State<HomeScreen> {
                 borderRadius: BorderRadius.circular(12),
               ),
             ),
-            onPressed: () async {
-              await _firestoreServices.deleteJournelCollection(id);
+           onPressed: () async {
+              try {
+                await _firestoreServices
+                    .deleteJournelCollection(id)
+                    .timeout(const Duration(seconds:1));
 
-              if (!mounted) return;
+                if (!mounted) return;
+                Navigator.of(context).pop();
+              } catch (e) {
+                if (!mounted) return;
 
-              Navigator.of(context).pop();
+                Navigator.of(context).pop(); 
+
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(
+                    content: Text("Delete queued. Will sync later."),
+                  ),
+                );
+              }
             },
             child: const Text("Delete"),
           ),

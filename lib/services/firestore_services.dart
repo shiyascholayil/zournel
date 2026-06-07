@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:zournel/models/journel_entry.dart';
 
+
 class FirestoreServices {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
@@ -18,6 +19,7 @@ class FirestoreServices {
       debugPrint('Error adding Journel $e');
     }
   }
+  
 
   Future<void> updateJournalEntry(
     String id,

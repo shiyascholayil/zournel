@@ -1,4 +1,6 @@
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:zournel/const.dart';
 import 'package:zournel/services/firestore_services.dart';
@@ -28,27 +30,45 @@ class _AddentryScreenState extends State<AddentryScreen> {
     super.dispose();
   }
 
-  /// SAVE JOURNAL
-  Future<void> _saveJournal() async {
-    if (!_formKey.currentState!.validate()) return;
+  
 
-    setState(() {
-      _isLoading = true;
-    });
+Future<void> _saveJournal() async {
+  if (!_formKey.currentState!.validate()) return;
 
-    await _firestore.addJournelEntry(
-      _titleController.text.trim(),
-      _descController.text.trim(),
-    );
+  setState(() {
+    _isLoading = true;
+  });
+
+  try {
+    await _firestore
+        .addJournelEntry(
+          _titleController.text.trim(),
+          _descController.text.trim(),
+        )
+        .timeout(const Duration(seconds: 5));
 
     if (!mounted) return;
-
-    setState(() {
-      _isLoading = false;
-    });
-
     Navigator.pop(context);
+  } on TimeoutException {
+    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        content: Text("Connection TimeOut"),
+      ),
+    );
+  } catch (e) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text("Error: $e"),
+      ),
+    );
+  } finally {
+    if (mounted) {
+      setState(() {
+        _isLoading = false;
+      });
+    }
   }
+}
 
   /// INPUT DECORATION
   InputDecoration _inputDecoration({
